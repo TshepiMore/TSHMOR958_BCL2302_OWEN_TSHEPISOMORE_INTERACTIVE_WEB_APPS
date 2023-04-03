@@ -5,7 +5,7 @@ let count = 0;//I changed CONST to LET so that I can be able to reassign my vari
 if (date === 2050) {
 	console.log("January", 'New Year’s Day');
 	console.log("March", 'Human Rights Day');
-	let month = 'April';
+	let month = 'April';//changed date to month 
 	console.log(month, 'Family Day');
 	console.log(month, 'Freedom Day');
 	count += 4;

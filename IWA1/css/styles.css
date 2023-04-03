@@ -17,7 +17,7 @@
 body {
     margin: 0;
     background: var(--color-medium-grey);
-    color:var (--color-white);
+    color: var(--color-white);
     font-family: Roboto, Arial, Helvetica, sans-serif;
     display: flex;
     flex-direction: column;
@@ -40,7 +40,7 @@ body {
 /*controls*/
 
 .controls {
-    background: yellow;
+    background: var(--color-green);
 }
 /* counter */
 
@@ -73,7 +73,7 @@ body {
     height: 10rem ;
     border-bottom: 1px solid var(--color-light-grey);
     transition: transform 0.1s;
-    transform: translateY(2%);
+    transform: translateY(0);
 }
 
 .counter_button:disabled {
@@ -88,6 +88,8 @@ body {
 .counter_button_first {
     border-right: 1px solid var(--color-light-grey);
 }
+
+/*footer*/
 
 .footer {
     background: var(--color-dark-grey);
