@@ -33,3 +33,8 @@ if (date === 2050) {
 console.log('The status is:', status);
 console.log('The year is:', date);
 console.log('The total holiday is:', count);
+
+//The variables 'date' amd 'status' are declared using a colon':' insted of an equal sign '='.
+//The console.log statement in lines 6 and 7 are missing closing parentheses.
+//In line 8 and 20, the 'date' is used insted of month.
+//The '=' operator is used instead of '===' in the 'if' statements to compare the values of 'date' and 'status'.
