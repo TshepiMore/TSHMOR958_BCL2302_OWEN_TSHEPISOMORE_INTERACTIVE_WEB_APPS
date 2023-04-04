@@ -1,5 +1,5 @@
 const date = 2050;
-const status = 'parent';
+const status = 'student';
 let count = 0;//I changed CONST to LET so that I can be able to reassign my variable later.
 
 if (date === 2050) {
