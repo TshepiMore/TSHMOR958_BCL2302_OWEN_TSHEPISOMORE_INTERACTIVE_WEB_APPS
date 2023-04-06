@@ -1,6 +1,6 @@
 //Declare variables to hold values
 const rent = 400;
-const tax = '12%';
+const tax = '8%';
 const food = 51.7501;
 const salary = 800;
 const transport = 10.2;
@@ -13,7 +13,7 @@ const minuteOfDay = 0;
 if (hourOfDay !== undefined && minuteOfDay !== undefined && hourOfDay == 0 && minuteOfDay == 0){
 	
   //Convert the tax percentage to decimal
-    const taxAsDecimal = parseFloat(tax)/ 100;
+    const taxAsDecimal = parseInt(tax)/ 100;
 
     //Calculate the starting salary after tax
   const startingAfterTax = salary * (1 - taxAsDecimal);
