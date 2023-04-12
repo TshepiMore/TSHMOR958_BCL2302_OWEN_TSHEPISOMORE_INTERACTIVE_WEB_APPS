@@ -1,5 +1,6 @@
+//Declare variables
 const salary = 4000;
-const lodging = 'apartment';
+const lodging = 'apartment';//added semicolons
 const size = 'large';
 
 
@@ -20,21 +21,20 @@ const tax = {
 
 const rent = {
     none: 0,
-    'small-room': 200,
-    'large-room': 300,
-    'small-apartment': 400,
-    'large-apartment': 800,
-    'small-house': 1200,
-    'large-house': 2400,
+    smallRoom: 200,
+    largeRoom: 300,
+    smallApartment: 400,//changed the properties writing them in camelCase
+    largeApartment: 800,
+    smallHouse: 1200,
+    largeHouse: 2400,
 }
 
 // You can change below however you want
 
-const taxAsDecimal = parseInt(tax['913']) / 100;
-const taxableAmout = salary * 1 - taxAsDecimal;
-const afterTaxAmount = salary - taxableAmout;
-const rentKey = lodging + size;
-const rentAmount = rent[rentKey];
-const balance = afterTaxAmount - expenses.transport - expenses.food - rentAmount;
+//calculating the tax multiply by salary
+const taxAsDecimal = parseInt(tax['913']) / 100 * salary;//used parseInt to change string to a number.used [] to replace .notation
+const startingAfterTax = salary * 1 - taxAsDecimal;
+const type = lodging + size;
+const balance = startingAfterTax - expenses.transport - expenses.food - rent.largeApartment;
 
 console.log(balance.toFixed(2));
