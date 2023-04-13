@@ -56,7 +56,6 @@ const copied = {
     date: new Date(`25 December ${currentYear}`),
 }
 const correctDate = copied.date;
-    // correctDate.setHours(0,0,0,0) ;
     const isEarlier = correctDate < holidays[christmas].date;
     console.log('New date is earlier',  isEarlier);
     if(isEarlier) {

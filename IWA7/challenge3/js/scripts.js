@@ -24,7 +24,7 @@ const sarah = `${sarahName} ${sarahSurname} (Owed R${(parseInt(sarahBalance)).to
 const total = "Total amount owed: R "
 
 //Combine the Leo, Sarah, divider, total and owed strings into the result string with appropriate line breaks
-const result = `${leo}${sarah}${divider}\n${total}R${owed.toFixed(2)}\n${divider}`;
+const result = `${leo}${sarah}${divider}\n${total}${owed.toFixed(2)}\n${divider}`;
 
 //Output the result string to the console
 console.log(result);
