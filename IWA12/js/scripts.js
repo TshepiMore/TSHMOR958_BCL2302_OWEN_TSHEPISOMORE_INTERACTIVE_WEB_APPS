@@ -1,3 +1,4 @@
+// Define an object that maps book statuses to their corresponding display properties
 const STATUS_MAP = {
     shelf: {
         color: 'green',
@@ -26,7 +27,7 @@ const STATUS_MAP = {
 }
 
 // Edit below line 
-
+// Define objects for each book, with properties for the status, reserve, checkout, and checkin elements.
 const book1 = {
     status : document.querySelector('#book1 .status'),
     reserve : document.querySelector('#book1 .reserve'),
@@ -47,9 +48,9 @@ const book2 = {
         checkout : document.querySelector('#book3 .checkout'),
         checkin : document.querySelector('#book3 .checkin'),
     }
-
-book1.checkin.style.color = '';
-book1.status.style.color = STATUS_MAP.overdue.color;
+    // Update the display for book1 based on its current status
+book1.checkin.style.color = '';//changing color of checkin button to default color
+book1.status.style.color = STATUS_MAP.overdue.color;//changing color of overdue based on its status
 
 book1.reserve = STATUS_MAP.overdue.canReserve ? book1.reserve.enabled = true : book1.reserve.disabled = true;
 
@@ -58,7 +59,7 @@ book1.checkout = STATUS_MAP.overdue.canCheckout ? book1.checkout.enabled = true 
 book1.checkin = STATUS_MAP.overdue.canCheckIn ? book1.checkin.enabled = true : book1.checkin.disabled = true;
 
 
-
+ // Update the display for book2 based on its current status
 book2.checkin.style.color = '';
 book2.status.style.color = STATUS_MAP.reserved.color;
 
@@ -69,7 +70,7 @@ book2.checkout = STATUS_MAP.reserved.canCheckout ? book2.checkout.enabled = true
 book2.checkin = STATUS_MAP.reserved.canCheckIn ? book2.checkin.enabled = true : book2.checkin.disabled = true;
 
 
-
+ // Update the display for book3 based on its current status
 book3.checkin.style.color = '';
 book3.status.style.color = STATUS_MAP.shelf.color;
 
