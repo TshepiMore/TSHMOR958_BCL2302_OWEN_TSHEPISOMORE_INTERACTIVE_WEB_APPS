@@ -1,12 +1,12 @@
 //Variable Declaration
-const add = (a, b) => { return a + b }//Function that takes two parameters 'a' and 'b' and added return so it returns their sum.
-const multiply = (a, b) => { return a * b }
+const add = (a, b) =>  a + b //Function that takes two parameters 'a' and 'b' and added return so it returns their sum.
+const multiply = (a, b) =>  a * b 
 
 //'internal' function
 function internal() {
 	const added = this.add(this.internal.a, this.internal.b)//Add the values of 'a' and 'b' stored in 'internal' object using the 'add' function and assign it to 'added'.
     const multiply = this.multiply(added, this.internal.c) //Multiply 'added' and the value of 'c' stored in 'internal' object using the 'multiply' function and assign it to 'multiply'
-	console.log(multiply)//change 'return this' to console so it print results of multiply.
+	console.log(multiply)//change 'return this' to console so it print results of multipl
 }
 
 // Not allowed to change below this
