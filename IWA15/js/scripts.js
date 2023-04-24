@@ -1,4 +1,4 @@
-// Create an object with nested arrays containing some data.
+//Object with nested arrays containing some data.
 const data = {
   lists: [
     ['first', [15, 11, 13, 7, 5]],
@@ -36,7 +36,7 @@ const extractBiggest = () => {
 }
 
 // Only edit above
-// Call the 'extractBiggest' function 15 times and store the results in the 'result' array
+//used loop to Call the 'extractBiggest' function 15 times and store the results in the 'result' array
 for (let i = 0; i < 15; i++) {
   result.push(extractBiggest())
 }

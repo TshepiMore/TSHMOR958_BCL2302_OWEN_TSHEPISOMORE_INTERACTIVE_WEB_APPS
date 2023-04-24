@@ -8,7 +8,7 @@ let calculated = '1'
 //'logCalc' function
 const  logCalc = () => { 
     const isString = typeof calculated === 'numerical-string';               // used === to check if 'calculated' is a string that can be parsed as a number
-    const calculatedAsNumber = isString ? calculated : parseInt(calculated);// change parsenumber to pasrseInt to Convert 'calculated' to a number if it's a string, otherwise leave it as it is.
+    const calculatedAsNumber = isString ? calculated : parseInt(calculated);// change parseNumber to parseInt to Convert 'calculated' to a number if it's a string, otherwise leave it as it is.
     calculated = calculatedAsNumber + 1                                     // Increment 'calculated' by 1
 }
 //'calcUser' function
