@@ -1,3 +1,5 @@
+import {createOrderHtml, html, updateDraggingHtml, moveToColumn, } from  './view.js'
+import { createOrderData, updateDragging} from './data.js'
 /**
  * A handler that fires when a user drags over any element inside a column. In
  * order to determine which column the user is dragging over the entire event
@@ -11,79 +13,54 @@
  */
 const handleDragOver = (event) => {
     event.preventDefault();
-    const path = event.path || event.composedPath();
-    let column = null;
+    const path = event.path || event.composedPath()
+    let column = null
 
     for (const element of path) {
         const { area } = element.dataset;
         if (area) {
-            column = area;
+            column = area
             break;
         }
     }
 
     if (!column) return;
-    updateDragging({ over: column });
-    updateDraggingHtml({ over: column });
+    updateDragging({ over: column })
+    updateDraggingHtml({ over: column })
 }
 
 
-const handleDragStart = (event) => {
-    const {id, area} = event.target.dataset;
-    const text = event.target.textContent.trim();
-    updateDragging({ id, area, text });
-    updateDraggingHtml({ drag: true});
-}
+const handleDragStart = (event) => {}
 
-const handleDragEnd = (event) => {
-    updateDragging({ drag: false});
-}
+const handleDragEnd = (event) => {}
 
 const handleHelpToggle = (event) => {
-const help = state.help ? null : 'visible';
-updateState({ help });
+    html.help.overlay.style.display = "block"
+}
+
+const handleHelpCancel = () => {
+    html.help.overlay.style.display = "none";
+    html.other.add.focus()
 }
 
 const handleAddToggle = (event) => {
-    const add = state.add ? null : 'visible';
-    updateState({ add })
+html.add.overlay.style.display = 'block'
 }
 
-const handleAddSubmit = (event) => {
-    event.preventDefault()
-    const text = html.add.text.value.trim();
-    const table = html.value.value.trim();
-    if (!table || !order) return {
-        addOrder({ text, table }){
-        updateState({ add: null})}
-    }
+const handleAddCancel = () => {
+    html.add.overlay.style.display = 'none';
+    html.other.add.focus()
 }
 
-const handleEditToggle = (event) => {
-    const { id } = event.target.dataset;
-    const order = state.orders.find(o => o.id === id);
-    if (!order) return;
-    updateEditing({ ...order}),
-    updateState({ edit: order.id })
-}
-const handleEditSubmit = (event) => {
-    event.preventDefault();
-    const id = state.edit;
-    const text = html.edit.text.value.trim();
-    const table = html.edit.table.value.trim();
-    const status = html.edit.status.value.trim();
-    if (!id || !text || !table || !status) return;
-    editOrder({ id, text, table, status })
-    updateState({ edit: null})
-}
-const handleDelete = (event) => {
-    const id = state.edit;
-    if (!id) return;
-    deleteOrder({ id });
-    updateState({ edit: null});
-}
+const handleAddSubmit = (event) => {}
 
-html.add.cancel.addEventListener('click', handleAddToggle)
+const handleEditToggle = (event) => {}
+
+const handleEditSubmit = (event) => {}
+
+const handleDelete = (event) => {}
+
+html.add.cancel.addEventListener('click', handleAddCancel)
 html.other.add.addEventListener('click', handleAddToggle)
 html.add.form.addEventListener('submit', handleAddSubmit)
 
@@ -102,16 +79,4 @@ for (const htmlColumn of Object.values(html.columns)) {
 
 for (const htmlArea of Object.values(html.area)) {
     htmlArea.addEventListener('dragover', handleDragOver);
-    htmlArea.addEventListener('dragenter', updateDraggingHtml);
-    htmlArea.addEventListener('dragleave', updateDraggingHtml);
-    htmlArea.addEventListener('drop', handleDrop);
-
-    function handleDrop(event) {
-        event.preventDefault();
-        const { over } = state.dragging;
-        const { area } = event.target.dataset;
-        if (!over || over === area) return;
-        moveOrder({ from: over, to: area });
-        updateDragging({ over: null})
-    }
 }
